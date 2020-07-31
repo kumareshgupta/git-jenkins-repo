@@ -9,15 +9,15 @@ pipeline {
         }
         stage('Test') {
             steps {
-                
-		sh mvn 'test'
+        	echo 'Testing...'        
+		sh 'mvn test'
 		
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-		sh mvn 'clean install'
+		sh 'mvn clean install'
             }
         }
     }
